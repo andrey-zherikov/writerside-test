@@ -90,8 +90,11 @@ jobs:
           name: docs
           path: .
 
+      - name: ls
+        run: find
+
       - name: Unzip artifact
-        run: unzip -O UTF-8 -qq ${{ env.ARTIFACT }} -d dir
+        run: unzip -O UTF-8 -qq artifacts/${{ env.ARTIFACT }} -d dir
 
       - name: Setup Pages
         uses: actions/configure-pages@v2

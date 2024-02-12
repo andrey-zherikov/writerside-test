@@ -68,6 +68,9 @@ jobs:
           name: docs
           path: artifacts
 
+      - name: ls
+        run: find
+
       - name: Test documentation
         uses: JetBrains/writerside-checker-action@v1
         with:

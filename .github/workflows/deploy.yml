@@ -66,6 +66,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: docs
+          path: .
 
       - name: ls
         run: find

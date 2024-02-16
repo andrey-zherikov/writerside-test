@@ -5,6 +5,7 @@ on:
   # Replace `main` with your branch’s name
   push:
     branches: ["main"]
+  pull_request:
   # Specify to run a workflow manually from the Actions tab on GitHub
   workflow_dispatch:
 
@@ -80,6 +81,7 @@ jobs:
           instance: ${{ env.INSTANCE }}
 
   deploy:
+    if: ${{ github.ref_name == 'main' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
